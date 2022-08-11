@@ -3,14 +3,21 @@
 
 <head>
   <title>Battle Ship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css" />
   <script defer src="./js/Mode.js"></script>
   <script defer src="./js/Game.js"></script>
-  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
+  <!-- <script src="http://localhost:3000/socket.io/socket.io.js" onload="checkServer='true';" onerror="checkServer='false'"></script> -->
+
 </head>
 
 <body>
+  <!-- For mobile -->
+  <center>
+    <h1 style="display:none;">Not Available on this size :)</h1>
+  </center>
+
   <!-- Hit Status -->
   <div class="hit">Hit</div>
   <div class="missed">Missed</div>
@@ -25,12 +32,9 @@
         <div class="host" id="host">Host</div>
         <div class="join" id="join">Join</div>
       </div>
+      <div class="howto" id="howto">How to Play?</div>
       <div id="info">
         <center>
-          <div id="info-name">
-            <div class="text">Enter your name</div>
-            <input name="player" type="text" required />
-          </div>
           <div id="info-code">
             <div class="text">Enter code</div>
             <input name="code" type="text" required />
@@ -310,7 +314,37 @@
   <!-- Fleet Status -->
   <div id="status">Fleet Status</div>
 
-
+  <!-- Rules -->
+  <div id="popupID" class="popup">
+    <div id="closePop"></div>
+    <center>
+      <h1>
+        <b>Rules for BattleShip </b>
+      </h1>
+    </center>
+    <u>
+      <br>
+      <h3> Game Objective</h3>
+    </u>
+    The object of Battleship is to try and sink all of the other player's before they sink all of your ships. All of the other player's ships are somewhere on his/her board. You try and hit them by calling out the coordinates of one of the squares on the board. The other player also tries to hit your ships by calling out coordinates. Neither you nor the other player can see the other's board so you must try to guess where they are. Each board in the physical game has two grids: the lower (horizontal) section for the player's ships and the upper part (vertical during play) for recording the player's guesses.
+    <u>
+      <h3> <br>Starting a New Game</h3>
+    </u>
+    Each player places the 5 ships somewhere on their board. The ships can only be placed vertically or horizontally. Diagonal placement is not allowed. No part of a ship may hang off the edge of the board. Ships may not overlap each other. No ships may be placed on another ship.
+    Once the guessing begins, the players may not move the ships. <br>
+    <br>
+    <u>
+      <h3> The 5 ships are: <br></h3>
+    </u>
+    <ol>
+      <li> <b> Carrier</b> (5 spaces)</li>
+      <li><b>Battleship</b> (4 spaces)</li>
+      <li> <b>Cruiser</b> (3 spaces)</li>
+      <li> <b>Submarine</b> (3 spaces)</li>
+      <li> <b>Destroyer</b> (2 spaces)</li>
+    </ol>
+    <center> <br> <span><a href="https://www.cs.nmsu.edu/~bdu/TA/487/brules.htm">https://www.cs.nmsu.edu/~bdu/TA/487/brules.htm</a></span></center>
+  </div>
 </body>
 
 </html>
